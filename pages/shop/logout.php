@@ -1,0 +1,3 @@
+<?php
+	logout_shop();
+?>

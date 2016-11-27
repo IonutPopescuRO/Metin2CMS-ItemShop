@@ -1,0 +1,13 @@
+@font-face {
+font-family: 'Zrnic-Regular';
+font-style: normal;
+font-weight: normal;
+src: local('Zrnic-Regular'), url('../fonts/zrnic.woff') format('woff');
+}
+
+@font-face {
+font-family: 'ExpresswayRg-Regular';
+font-style: normal;
+font-weight: normal;
+src: local('ExpresswayRg-Regular'), url('../fonts/expressway rg.woff') format('woff');
+}
