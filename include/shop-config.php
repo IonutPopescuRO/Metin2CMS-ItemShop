@@ -15,15 +15,15 @@
 			redirect("index.php?p=items&category=".$item[0]['category']);
 	}
 	
-	if(($current_page=='items' || $current_page=='add_items') && !is_check_category($get_category))
-		redirect("index.php");
-	
 	if($current_page=='items' && is_loggedin() && web_admin_level()>=$minim_web_admin_level)
 	{
 		$remove = isset($_GET['remove']) ? $_GET['remove'] : 1;
 		if($remove)
 			is_delete_item($remove);
 	}
+	
+	if(($current_page=='items' || $current_page=='add_items') && !is_check_category($get_category))
+		redirect("index.php");
 
 	if(($current_page=='item' || $current_page=='buy') && !is_check_item($get_item))
 		redirect("index.php");
