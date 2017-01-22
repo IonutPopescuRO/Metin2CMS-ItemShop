@@ -96,7 +96,7 @@
 ?>
 
 			<ul class="breadcrumb">
-				<li><a href="shop.php">Item-Shop</a></li>
+				<li><a href="index.php">Item-Shop</a></li>
 				<li class="active"><?php print ucfirst($current_page); ?></li>
 			</ul>
 			<div class="well">
