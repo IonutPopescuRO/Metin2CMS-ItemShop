@@ -100,7 +100,9 @@
 											<center><p class="text-danger"><?php print $lang['available_lvl']; ?> <b><?php print $lvl; ?></b></p></center>
 											<?php } if(check_item_sash($item[0]['vnum'])) { ?>
 											<center><p class="text-warning"><?php print $lang['bonus_absorption']; ?> <b><?php print is_get_sash_absorption($get_item); ?></b>%</p></center>
-											<?php } if((get_item_type($item[0]['vnum'])=="ITEM_UNIQUE" || $item[0]['socket0']) && is_loggedin()) { ?>
+											<?php } if(get_item_name($item[0]['socket0']))
+														get_item_stones_market($get_item);
+												else if((get_item_type($item[0]['vnum'])=="ITEM_UNIQUE" || $item[0]['socket0']) && is_loggedin()) { ?>
 											<center><hr><p class="text-info"><?php print $lang['time_left']; ?> <b><?php is_get_item_time($get_item); ?></b></p></center>
 											<?php } ?>
 											<?php if(is_loggedin()) { ?>

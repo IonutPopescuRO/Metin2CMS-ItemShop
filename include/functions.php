@@ -217,6 +217,14 @@ function check_item_sash($id)
 	else return false;
 }
 
+function check_item_stone($id)
+{
+	if($id >= 28000 && $id <= 28960)
+		return true;
+	else return false;
+}
+
+
 function get_item_name($id)
 {
 	global $sqlite;
@@ -310,6 +318,34 @@ function web_admin_level()
 }
 
 //Functions for item-shop
+
+function get_item_stones_market($id)
+{
+	global $sqlite;
+	
+	$sth = $sqlite->prepare('SELECT socket0, socket1, socket2
+		FROM item_shop_items
+		WHERE id = ?');
+	
+	$sth->bindParam(1, $id, PDO::PARAM_INT);
+	$sth->execute();
+	$result = $sth->fetchAll();
+
+	if((check_item_stone($result[0]['socket0'])))
+	{
+		print '<div class="alert alert-info">
+					<div class="row">';
+					
+		for($i=0;$i<=2;$i++)
+			if((check_item_stone($result[0]['socket'.$i])))
+				print '<div class="col-md-4">
+							<img src="images/items/'. get_item_image($result[0]['socket'.$i]) .'.png">
+							<p>'. return_item_name($result[0]['socket'.$i]) .'</p>
+						</div>';
+		print '</div>
+		</div>';
+	}
+}
 
 function is_categories_list()
 {
