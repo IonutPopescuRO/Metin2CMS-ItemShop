@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 include 'config.php';
 include 'get_item_image.php';
 
@@ -639,7 +639,7 @@ function is_buy_item($id)
 	
 	if(check_item_column("applytype0"))
 	{
-		if($result[0]['socket0'])
+		if($result[0]['type']==1)
 		{
 			$time_costume = time() + 60 * intval($result[0]['socket0']);
 			$stmt = $player->prepare('INSERT INTO item (owner_id, window, pos, count, vnum, socket0, socket1, socket2, attrtype0, attrvalue0, attrtype1 , attrvalue1, attrtype2, attrvalue2, attrtype3, attrvalue3, attrtype4, attrvalue4, attrtype5, attrvalue5, attrtype6, attrvalue6, applytype0, applyvalue0, applytype1, applyvalue1, applytype2, applyvalue2, applytype3, applyvalue3, applytype4, applyvalue4, applytype5, applyvalue5, applytype6, applyvalue6, applytype7, applyvalue7) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');
@@ -665,7 +665,7 @@ function is_buy_item($id)
 	}
 	else
 	{
-		if($result[0]['socket0'])
+		if($result[0]['type']==1)
 		{
 			$time_costume = time() + 60 * intval($result[0]['socket0']);
 			$stmt = $player->prepare('INSERT INTO item (owner_id, window, pos, count, vnum, socket0, socket1, socket2, attrtype0, attrvalue0, attrtype1 , attrvalue1, attrtype2, attrvalue2, attrtype3, attrvalue3, attrtype4, attrvalue4, attrtype5, attrvalue5, attrtype6, attrvalue6) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)');

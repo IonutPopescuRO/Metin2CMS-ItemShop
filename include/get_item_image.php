@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 function get_item_image($id)
 {
